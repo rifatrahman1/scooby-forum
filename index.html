@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-theme = 'light' set>
+<html lang="en" data-theme='light' set>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- mulish font by google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>Scooby Forum</title>
     <style>
         .mulish-font {
@@ -17,25 +20,113 @@
         }
     </style>
 </head>
+
 <body class="mulish-font">
-    
+
     <!-- header section start -->
-     <header class="container w-11/12 lg:w-10/12 mx-auto mt-14">
+    <header class="container w-11/12 lg:w-[1170px] mx-auto mt-14">
         <!-- navigation bar start -->
-         <nav class="flex items-center justify-between">
+        <nav class="flex items-center justify-between">
             <div>
-                <a class="btn btn-ghost text-xs lg:text-4xl uppercase gap-0">Sc<img class="lg:h-12 h-5" src="./images/download.png">by</a>
+                <a class="btn btn-ghost text-xs lg:text-4xl uppercase gap-0">Sc<img class="lg:h-12 h-5"
+                        src="./images/download.png">by</a>
             </div>
             <div class="flex items-center gap-3 cursor-pointer">
                 <img class="bg-[#12132D08] px-[18px] py-4 rounded-full" src="./icons/home.png" alt="">
                 <img class="bg-[#12132D08] px-[18px] py-4 rounded-full" src="./icons/edit.png" alt="">
                 <img class="bg-[#12132D08] px-[18px] py-4 rounded-full" src="./icons/people.png" alt="">
                 <img class="bg-[#12132D08] px-[18px] py-4 rounded-full" src="./icons/flag.png" alt="">
-                <button class="text-xl font-bold text-white bg-[#797DFC] px-10 py-[18px] rounded-[50px]">Sign in</button>
+                <button class="text-xl font-bold text-white bg-[#797DFC] px-10 py-[18px] rounded-[50px]">Sign
+                    in</button>
             </div>
-         </nav>
+        </nav>
         <!-- navigation bar end -->
-     </header>
+
+        <!-- banner seciton start -->
+        <section style="background-image: url(./images/bgbanner.png);"
+            class="w-[1170px] h-[550px] bg-[#12132D] bg-repeat-round rounded-[32px] mt-14 flex items-center justify-center gap-20">
+            <div>
+                <h1 class="text-[64px] font-black text-white">Welcome to the <br> <span
+                        class="bg-gradient-to-r from-[#797DFC] to-sky-900 text-transparent bg-clip-text">ScOOby </span>
+                    Forum</h1>
+                <p class="text-xl font-medium text-white leading-9 mt-5">Share your favorite opinion and win and wp <br>
+                    forum coffee mug!</p>
+                <label class="input input-bordered flex items-center gap-2 mt-8">
+                    <input id="search_post" type="text" class="grow py-[18px] px-[20px] rounded-[50px]"
+                        placeholder="Search here anything" />
+                    <button onclick="handle_search_post()"
+                        class="badge text-xl font-bold text-white bg-[#797DFC] py-[20px] px-[27px]">Search</button>
+                </label>
+            </div>
+            <div class="bg-white rounded-[32px] p-12  flex justify-between gap-14">
+                <div class="space-y-6">
+                    <div class="text-2xl font-medium text-[#12132DCC]">Registered Users</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">Forum</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">Topics</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">Replies</div>
+
+                </div>
+                <div class="space-y-6 text-left">
+                    <div class="text-2xl font-medium text-[#12132DCC]">01</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">05</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">01</div>
+                    <div class="text-2xl font-medium text-[#12132DCC]">01</div>
+                </div>
+            </div>
+        </section>
+        <!-- banner seciton end -->
+    </header>
     <!-- header section end -->
+
+    <!-- main section start -->
+    <main class="container w-11/12 lg:w-[1170px] mx-auto mt-28">
+        <!-- lets discuss seciton -->
+        <section>
+            <div class="text-center">
+                <h1 class="font-black text-[40px] text-[#12132D]">Let’s Discuss</h1>
+                <p class="text-[18px] mt-[25px] leading-8 text-[#12132D99]">Yes, you can run unit tests and view the
+                    results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            </div>
+            <div  class="grid grid-cols-3 gap-6 mt-12">
+                   <div id="post_container" class="col-span-2 space-y-6">
+                
+                   </div>
+                <!-- title -->
+                    <div class="p-6 bg-[#12132D0D] rounded-3xl col-span-1">
+                        <div class="flex justify-between gap-32">
+                            <h3 class="text-xl font-bold text-[#12132D]">Title</h3>
+                            <div class="flex gap-2 items-center">
+                                <img src="./icons/right.png" alt="">
+                                <p>Mark as read (<span id="mark_handle_count">0</span>)</p>
+                            </div>
+                        </div>
+                        <div id="read_as_container">
+                            
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- join our forum section start -->
+        <section class="bg-[#12132D] w-full flex items-center gap-11 rounded-[32px] mt-[100px]">
+            <div class="pl-24">
+                <h1 class="text-[40px] font-black text-white">Join Our Forum</h1>
+                <p class="text-[18px] text-[#FFFFFFCC] mt-4">Share your favorite opinion and win and wp forum coffee
+                    mug! Yes, you can <br> run unit tests and view the results directly within the app. </p>
+                <button class="text-xl font-bold text-white px-10 py-[18px] bg-[#797DFC] rounded-[50px] mt-8">Registered
+                    Now</button>
+            </div>
+            <div class="mt-16">
+                <img src="./images/joinforum.png" alt="">
+            </div>
+        </section>
+        <!-- join our forum section end -->
+
+    </main>
+    <!-- main section end -->
+
+
+    <script src="./JS/scooby.js"></script>
 </body>
+
 </html>
