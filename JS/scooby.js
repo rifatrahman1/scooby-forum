@@ -8,6 +8,7 @@ const load_all_post = async (category) => {
     //     console.log(`https://openapi.programming-hero.com/api/retro-forum/posts`)
     // }
 
+    const post_container = document.getElementById('post_container').innerHTML = '';
 
     const response = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts${category ? `?category=${category}` : ''}`);
     const data = await response.json();
@@ -95,4 +96,39 @@ const handle_search_post = () => {
     load_all_post(search_post)
 }
 
+const latest_post = async () => {
+    const response = await fetch (`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await response.json();
+    display_latest_post(data);
+}
+
+const display_latest_post = (latest) => {
+    const latest_container = document.getElementById ('latest_container');
+    
+    latest.forEach(data => {
+        const div = document.createElement ('div');
+    div.innerHTML = `
+    <div class="border rounded-3xl p-6">
+                        <img class="bg-[#12132D0D] w-[326px] h-[190px] rounded-3xl" src="${data.cover_image}" alt="">
+                        <div class="flex items-center gap-4 text-[#12132D99] mt-6">
+                            <img src="./icons/calender.png" alt="">
+                            <p>${data.author.posted_date}</p>
+                        </div>
+                        <h2 class="text-[18px] font-extrabold text-[#12132D] mt-4">${data.title}</h2>
+                        <p class="text-[#12132D99] mt-3">${data.description}</p>
+                        <div class="flex items-center gap-4 mt-4">
+                            <img class="w-[44px] h-[44px] bg-cover rounded-full" src="${data.profile_image}" alt="">
+                            <div>
+                                <p class="text-[#12132D] font-bold">${data.author.name}</p>
+                                <p class="text-[14px] text-[#12132D99] mt-1">${data.author.designation}</p>
+                            </div>
+                        </div>
+                    </div>
+    `;
+    latest_container.appendChild (div);
+    });
+    
+}
+
+latest_post();
 load_all_post()
